@@ -21,7 +21,7 @@
     <h2 class="section-title">Student Profile</h2>
     <div class="profile-card">
         <div class="profile-header">
-            <img src="{{ $user->avatar_url ?? asset('images/profile.jpg') }}" alt="Avatar" class="profile-avatar">
+            <img src="{{ $user->avatar_url ?? asset('images/default-avatar.png') }}" alt="Avatar" class="profile-avatar">
             <div>
                 <h3>{{ $user->name }}</h3>
                 <p>{{ $user->email }}</p>
