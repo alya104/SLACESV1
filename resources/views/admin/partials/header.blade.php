@@ -7,7 +7,7 @@
             @elseif(Auth::user()->avatar)
                 <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Profile">
             @else
-                <img src="{{ asset('images/profile.jpg') }}" alt="Profile">
+                <img src="{{ asset('images/default-avatar.png') }}" alt="Profile">
             @endif
             {{ Auth::user()->name }}
             <i class="fas fa-chevron-down" style="margin-left:0.5rem;"></i>
