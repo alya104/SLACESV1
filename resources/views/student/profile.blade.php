@@ -50,10 +50,6 @@
                 <input type="email" name="email" value="{{ $user->email }}" class="form-control" readonly>
             </div>
             <div class="form-group">
-                <label>Avatar</label>
-                <input type="file" name="avatar" class="form-control">
-            </div>
-            <div class="form-group">
                 <label>New Password <small>(leave blank to keep current)</small></label>
                 <input type="password" name="password" class="form-control" autocomplete="new-password">
             </div>
