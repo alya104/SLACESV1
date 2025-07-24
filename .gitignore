@@ -23,6 +23,7 @@
 !/storage/logs/.gitignore
 
 # Allow uploaded files
+!/storage
 !storage/app/public
 !storage/app/public/**
 /vendor

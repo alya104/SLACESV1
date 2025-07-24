@@ -423,10 +423,11 @@ function openMaterialPreview(materialId) {
                 }
             } else if (material.type === 'pdf') {
                 const pdfUrl = `/storage/${material.file_path}`;
+                const viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
                 previewContent.innerHTML = `
                     <div class="pdf-container">
                         <iframe 
-                            src="/pdfjs/web/viewer.html?file={{ urlencode(asset('storage/' . $material->file_path)) }}" 
+                            src="${viewerUrl}" 
                             width="100%" 
                             height="500" 
                             style="border: none; border-radius: 8px;">
