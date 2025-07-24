@@ -1,0 +1,412 @@
+/* Guest Dashboard & Join Class Page Styles */
+:root {
+    --primary-color: #b197fc;
+    --primary-light: #e4dcf5;
+    --primary-dark: #8a63f5;
+    --text-dark: #333;
+    --text-light: #666;
+    --border-radius: 12px;
+    --content-bg: #f5f7fa;
+    --shadow-sm: 0 1px 3px rgba(177,151,252,0.12);
+    --shadow-md: 0 4px 6px rgba(177,151,252,0.15);
+    --shadow-lg: 0 10px 15px rgba(177,151,252,0.18);
+}
+
+body {
+    background: var(--content-bg);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Guest header styling with enhanced animation */
+.guest-header {
+    background: linear-gradient(135deg, #e4dcf5 0%, #b197fc 100%);
+    box-shadow: var(--shadow-md);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-bottom: 24px;
+    padding-bottom: 0;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.guest-header .container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px 10px 24px;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #b197fc;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(177,151,252,0.25);
+}
+
+.guest-header span {
+    font-weight: bold;
+    color: var(--primary-dark);
+    font-size: 1.08rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.guest-header div[style*="font-size: 14px"] {
+    color: #7c6bb1 !important;
+    font-size: 14px !important;
+}
+
+.guest-header hr {
+    border: none;
+    border-top: 1px solid #e4dcf5;
+    margin: 0 24px 0 24px;
+    animation: expandWidth 0.5s ease-out;
+}
+
+.content-section {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.content-section:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Hide the grid version as we're using carousel */
+.classes-grid {
+    display: none; /* Hide the grid version */
+}
+
+.classes-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 0 60px;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+/* Carousel Navigation Arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+    transition: all 0.3s ease;
+    border: none;
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+.carousel-nav:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+    left: 0;
+}
+
+.carousel-nav.next {
+    right: 0;
+}
+
+/* Carousel Cards */
+.carousel-card {
+    width: 340px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transform: scale(0.92);
+    z-index: 1;
+}
+
+/* Center card styling */
+.carousel-card.active {
+    opacity: 1;
+    transform: scale(1.08);
+    z-index: 2;
+    box-shadow: 0 15px 30px rgba(177, 151, 252, 0.25);
+}
+
+.carousel-card.side {
+    opacity: 0.85;
+    transform: scale(0.98);
+    z-index: 1;
+}
+
+.carousel-card:not(.active):not(.side) {
+    opacity: 0.5;
+    transform: scale(0.90);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.carousel-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(177, 151, 252, 0.3);
+}
+
+/* Class Thumbnail */
+.class-thumbnail {
+    width: 100%;
+    height: 220px; /* Adjust as needed for your card height */
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.class-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures horizontal cover, not zoomed vertical */
+    object-position: center;
+    display: block;
+}
+
+/* Class Info */
+.class-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px 20px 20px 20px;
+    background: #fff;
+}
+
+.class-info h4 {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.class-info p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: var(--primary-dark);
+    transform: scale(1.3);
+}
+
+/* Section Header Styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-light), var(--primary-color), var(--primary-light));
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Join Class Button Styling */
+.btn,
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(177,151,252,0.10);
+    transition: background 0.18s, box-shadow 0.18s, transform 0.15s;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none !important; /* Remove underline */
+}
+
+.btn-primary:hover,
+.btn:hover {
+    background: var(--primary-dark);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(177,151,252,0.18);
+    transform: translateY(-2px) scale(1.04);
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .classes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    .guest-header .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .profile-avatar {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .classes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-section {
+        padding: 20px 15px;
+    }
+}
